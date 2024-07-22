@@ -14,55 +14,63 @@
             <div class="col-12 col-md-6 col-md-4">
               <form>
                 <div class="mb-3">
-                  <label for="firstName" class="form-label">Name Pet</label>
+                  <label for="patName" class="form-label">Name Pet</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="firstName"
+                    id="petName"
                     aria-describedby="emailHelp"
                     required
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="lastName" class="form-label">Cognome</label>
+                  <label for="ownerName" class="form-label">Name Owner</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="lastName"
+                    id="ownerName"
                     aria-describedby="emailHelp"
                     required
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="phone" class="form-label">Telefono</label>
+                  <label for="petSpecies" class="form-label">Species</label>
                   <input
-                    type="tel"
+                    type="text"
                     class="form-control"
-                    id="phone"
+                    id="petSpecies"
                     aria-describedby="emailHelp"
                     required
                   />
                 </div>
-                <button type="submit" class="btn btn-success">
-                  SALVA CONTATTO
+                <div class="mb-3">
+                  <label for="petBreed" class="form-label">Breed</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="petBreed"
+                    aria-describedby="emailHelp"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-info px-5 fw-bold text-secondary">
+                  SAVE PET
                 </button>
               </form>
             </div>
           </div>
           <div class="row justify-content-center mt-5">
             <div class="col-12 col-md-6 col-md-4">
-              <h2 class="text-center">CONTATTI</h2>
-              <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+              <h2 class="text-center">Pets List</h2>
+              <ul class="list-group" id="completePetList">
+                <!--<li class="list-group-item">An item</li>-->
               </ul>
+              <p id="sameOwner" class="text-center text-primary"></p>
             </div>
           </div>
         </div>
       </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="./OOP-esercizio2-formPets.js"></script>
   </body>
 </html>
