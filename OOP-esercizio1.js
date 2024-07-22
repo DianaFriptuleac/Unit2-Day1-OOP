@@ -19,11 +19,6 @@ const user1 = new User('Mario', 'Neri', 25, 'Milano')
 console.log('primo utente', user1)
 
 ////////////////////////////////////////////////////////////////// utente 2 
-class User2 extends User {
-    constructor(_firstName, _lastName, _age, _location){
-        super(_firstName, _lastName, _age, _location)
-    }
-}
 const user2 = new User('Givanni', 'Verdi', 38 ,'Firenze')
 console.log('secondo utente', user2)
 console.log(user2.ageCompared(user1))
@@ -40,11 +35,6 @@ console.log('terzo utente', user3)
 console.log(user3.ageCompared(user2))
 
 ///////////////////////////////////////////////////////////////// utente 4
-class User4 extends User3 {
-    constructor(_firstName, _lastName, _age, _location, _skills){
-        super(_firstName, _lastName, _age, _location)
-    }
-}
 const user4 = new User3('Antonio', 'Ferrari', 28 ,'Padova', ['HTML', 'JS', 'CSS'])
 console.log('quarto utente', user4)
 console.log(user4.ageCompared(user3))
