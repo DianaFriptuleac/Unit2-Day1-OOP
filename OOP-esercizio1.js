@@ -49,3 +49,30 @@ class User5 extends User {
 const user5 = new User5('Stefania', 'Poppi', 32 ,'Reggiolo', 'Biondi')
 console.log('quinto utente', user5)
 console.log(user5.ageCompared(user4))
+
+
+
+/////////////////////////////////////////////////////////////////soluzione 2
+/*class User{
+    constructor(_firstName, _lastName, _age, _location){
+        this.firstName = _firstName
+        this.lastName = _lastName
+        this.age = _age
+        this.location = _location
+    }
+    compareAges = function(anotherUser){
+        if(this.age > anotherUser.age) {
+            return `${this.firstName} ${this.lastName} é piu giovane di ${usersComparedAge.firstName} ${usersComparedAge.lastName}`
+        } else if (this.age > usersComparedAge.age){
+            return  `${usersComparedAge.firstName} ${usersComparedAge.lastName} é piu givane di ${this.firstName} ${this.lastName}`
+    } else{
+        return  `${usersComparedAge.firstName} ${usersComparedAge.lastName} ha la stessa eta di ${this.firstName} ${this.lastName}`
+    }
+}
+}
+
+    const u1 = new User ('Stefania', 'Poppi', 32 ,'Reggiolo')
+    console.log(u1)
+
+    const u2 =new User ('Alina', 'Poppi', 35 ,'Reggiolo')
+    console.log(ul.ageCompared(u2))*/

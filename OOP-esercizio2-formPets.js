@@ -7,8 +7,13 @@ class Pets {
       this.breed = _breed
     }
     //metodo per vedere se hanno lo stesso padrone
-    sameOwnerName(otherPet){
-        return this.ownerName === otherPet.ownerName
+    sameOwnerName = function(otherPet){
+    //return this.ownerName === otherPet.ownerName
+    if (this.ownerName === otherPet.ownerName){
+        return true
+    }else{
+        return false
+    }
     }
   }
   //la memoria della mia lista
@@ -22,7 +27,7 @@ document.getElementsByTagName('form')[0].addEventListener('submit', function (e)
     const petSpeciesInput = document.getElementById('petSpecies')
     const petBreedInput = document.getElementById('petBreed')
 
-    const petNameValue = petNameInput.value // recupero i valori dei miei input
+    const petNameValue = petNameInput.value // leggo i valori dei miei input
     const ownerNameValue = ownerNameInput.value 
     const petSpeciesValue =  petSpeciesInput.value
     const petBreedValue = petBreedInput.value
@@ -31,17 +36,17 @@ document.getElementsByTagName('form')[0].addEventListener('submit', function (e)
 
     petsList.push(petElement) //inserisco nel mio array l'elemento appena creato
 
-    //controllo se se uno dei animali ha lo stesso padrone
-    let sameOwnerLet = false;
-    for(let i = 0; i< petsList.length -1; i++ ){
-        if(petElement.sameOwnerName(petsList[i])){
-            sameOwnerLet = true;
+    //controllo se uno dei animali ha lo stesso padrone
+    let sameOwnerLet = false;  //tengo traccia se si trova un altro pet con lo stesso padrone
+    for(let i = 0; i < petsList.length -1; i++ ){  //uso il ciclo for per controllare tutta la lista e il -1 per raggiungere l'ultimo elemento del mio array
+        if(petElement.sameOwnerName(petsList[i])){   // controllo se un altro animale ha lo stesso padrone nella lista faccendo rifferimento al metodo scritto sopra
+            sameOwnerLet = true;   //aggiorno il  let sameOwner ed esco dal coclo con break
             break;
         }
     }
     //Aggiungo il messaggio nel pip <p>
-    const pMessage = document.getElementById('sameOwner');
-    if ( sameOwnerLet){
+    const pMessage = document.getElementById('sameOwner');  //recupero il mio elemento in html, l'id del <p> dove verra scritto il mio messaggio
+    if ( sameOwnerLet){   // se il mio sameOwnerLet e vero- scrivo il messaggio, altrimenti ho una stringa vuota
         pMessage.innerHTML = 'This pet has the same owner as the other'
     }else {
         pMessage.innerText = ' ';
@@ -56,7 +61,7 @@ document.getElementsByTagName('form')[0].addEventListener('submit', function (e)
         //creo un <li> vuoto
         const emptyLi = document.createElement('li')
         //ora riempio la mia <li> con i dati
-        emptyLi.innerText = petsList[i].petName + ' '+ petsList[i].ownerName + ' ' + petsList[i].species + ' ' + petsList[i].breed
+        emptyLi.innerText = petsList[i].petName + ' ,di proprietá di '+ petsList[i].ownerName + ', é un/una ' + petsList[i].species + ' di razza ' + petsList[i].breed
 
         emptyLi.classList.add('list-group-item') //aggiungo la classe di bootstrap alla mia <li>
 
